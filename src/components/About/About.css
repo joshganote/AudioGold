@@ -1,0 +1,8 @@
+.aboutImg {
+    background-image: url("../../assets/Arcade.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }

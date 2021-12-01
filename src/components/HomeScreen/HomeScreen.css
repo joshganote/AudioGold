@@ -1,15 +1,34 @@
+.container {
+}
+
 video {
+  /* object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0; */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }
 
 h1 {
-  top: 50px;
-  left: 50px;
-  position: absolute;
   color: white;
 }
+
+/* .home-grid {
+  position: relative;
+  padding: "1em 3em";
+}
+
+@media only screen and (max-width: 768px) {
+  .home-grid {
+    background-color: lightblue;
+  }
+} */

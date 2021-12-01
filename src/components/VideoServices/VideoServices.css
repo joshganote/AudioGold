@@ -1,0 +1,12 @@
+.productionImg {
+    background-image: url("../../assets/production.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* hover {
+    transform: translateY(-10px);
+  } */
