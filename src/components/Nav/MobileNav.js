@@ -60,11 +60,11 @@ const Navvv = styled.div`
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
 
-  window.addEventListener("resize", () => {
-    if (document.body.clientWidth > 768) {
-      setOpen(false);
-    }
-  });
+  // const windowSize = window.addEventListener("resize", () => {
+  //   if (document.body.clientWidth > 768) {
+  //     setOpen(false);
+  //   }
+  // });
 
   return (
     <>

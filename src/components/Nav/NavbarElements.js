@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { VscMenu, VscClose } from "react-icons/vsc";
+import { IoClose, IoMenu } from "react-icons/io5"
+import { BiMenuAltRight } from "react-icons/bi"
+import { GiFilmStrip } from "react-icons/gi";
 import { standardSizing, breakPoint } from "../styles/variables";
 
 // export const Nav = styled.nav`
@@ -81,18 +84,18 @@ import { standardSizing, breakPoint } from "../styles/variables";
 //   }
 // `;
 
-const btnStyles = css`
-  cursor: pointer;
-  /* background: none;
-  border: none;
-  outline: none;
-  color: inherit; */
-  padding: 0;
-`;
+// const btnStyles = css`
+//   cursor: pointer;
+//   background: none;
+//   border: none;
+//   outline: none;
+//   color: inherit;
+//   padding: 0;
+// `;
 
-export const SHeaderHeight = styled.div`
-  height: ${standardSizing.headerHeight};
-`;
+// export const SHeaderHeight = styled.div`
+//   height: ${standardSizing.headerHeight};
+// `;
 
 export const SHeaderFixed = styled.div`
   position: fixed;
@@ -100,7 +103,7 @@ export const SHeaderFixed = styled.div`
   right: 0;
   top: 0;
   height: ${standardSizing.headerHeight};
-  background-color: darkgrey;
+  background-color: black;
   z-index: 10;
 `;
 
@@ -112,10 +115,11 @@ export const SHeader = styled.header`
   display: flex;
   align-items: center;
 
+  padding: 0 4rem;
   transition: 0.3s ease padding;
-  padding: 0 ${standardSizing.mdSpacing};
-  @media ${breakPoint.lg} {
-    padding: 0 ${standardSizing.lgSpacing}
+  @media screen and (max-width: 768px) {
+    padding: 0 2rem;
+    transition: 0.3s ease padding;
   }
 
   > div {
@@ -128,7 +132,7 @@ export const SLeft = styled.div``;
 export const SCenter = styled.div`
   height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   display: none;
   @media ${breakPoint.md} {
     display: flex;
@@ -136,7 +140,7 @@ export const SCenter = styled.div`
 `;
 
 export const SRight = styled.div`
-  display:flex;
+  display: flex;
   justify-content: flex-end;
   align-items: center;
 `;
@@ -147,6 +151,7 @@ export const SLogoLink = styled(Link)`
   width: 40px;
   color: inherit;
   text-decoration: none;
+  color: white;
 `;
 
 export const SLogo = styled.h1`
@@ -154,6 +159,7 @@ export const SLogo = styled.h1`
   display: block;
   width: 100%;
   height: 100%;
+  color: white;
 `;
 
 // Center Nav
@@ -166,68 +172,61 @@ export const SLogo = styled.h1`
 // `;
 
 // export const SMenuToggleButton = styled.button`
-//   ${btnStyles}  
+//   ${btnStyles}
 // `;
 
+// const iconStyles = css`
+//   width: 100%;
+//   height: 100%;
+// `;
+// export const SMenuIcon = styled(VscMenu)`
+//   ${btnStyles}
+//   width: 32px;
+//   position: relative;
+//   z-index: 100;
+//   top: 2px;
+//   @media ${breakPoint.md} {
+//     display: none;
+//   }
+// `;
 
-const iconStyles = css`
-  /* width: 100%;
-  height: 100%; */
-`;
-export const SMenuIcon = styled(VscMenu)`
-  ${btnStyles}
-  width: 32px;
-  position: relative;
-  z-index: 100;
-  top: 2px;
-  @media ${breakPoint.md} {
-    display: none;
-  }
-`;
+// export const SCloseIcon = styled(VscClose)`
+//   ${btnStyles}
+//   width: 32px;
+//   position: relative;
+//   z-index: 100;
+//   top: 2px;
+//   @media ${breakPoint.md} {
+//     display: none;
+//   }
+// `;
 
-export const SCloseIcon = styled(VscClose)`
-  ${btnStyles}
-  width: 32px;
-  position: relative;
-  z-index: 100;
-  top: 2px;
-  @media ${breakPoint.md} {
-    display: none;
-  }
-`;
+// export const SNav = styled.nav`
+//   width: auto;
+//   padding: ${standardSizing.mdSpacing};
+//   background: yellow;
+//   border-radius: ${standardSizing.borderRadius};
+//   @media ${breakPoint.md} {
+//     background: red;
+//     padding: 0;
+//     height: 100%;
+//     display: flex;
+//   }
+// `;
 
-export const SMobileMenu = styled.div`
-  position: fixed;
-  top: ${standardSizing.headerHeight};
-  left: 100%;
-  right: 0;
-  bottom: 0;
-  background: grey;
+// export const SNav2 = styled.nav`
+//   width: auto;
+//   padding: ${standardSizing.mdSpacing};
+//   background: yellow;
+//   border-radius: ${standardSizing.borderRadius};
 
-  width: 100vw;
-  height: calc(100% - ${standardSizing.headerHeight});
-  transition: 0.3s ease left;
-  padding: ${standardSizing.lgSpacing};
-
-  @media ${breakPoint.md} {
-    display: none;
-  }
-`;
-
-export const SNav = styled.nav`
-  width: auto;
-  padding: ${standardSizing.mdSpacing};
-  background: yellow;
-  border-radius: ${standardSizing.borderRadius};
-  
-  @media ${breakPoint.md} {
-    background: red;
-    background: none;
-    padding: 0;
-    height: 100%;
-    display: flex;
-  }
-`;
+//   @media ${breakPoint.md} {
+//     background: red;
+//     padding: 0;
+//     height: 100%;
+//     display: flex;
+//   }
+// `;
 
 export const SNavLinkContainer = styled.div`
   user-select: none;
@@ -236,22 +235,79 @@ export const SNavLinkContainer = styled.div`
   justify-content: space-between;
 
   :not(:last-of-type) {
-    margin-bottom: ${standardSizing.mdSpacing}
+    margin-bottom: ${standardSizing.mdSpacing};
   }
 
   @media ${breakPoint.md} {
     display: flex;
-    align-items:center;
+    align-items: center;
     :not(:last-of-type) {
       margin-bottom: 0;
-      margin-right: ${standardSizing.mdSpacing}
+      margin-right: ${standardSizing.mdSpacing};
     }
   }
 `;
 
 export const SNavLink = styled(Link)`
   text-decoration: none;
-  color: inherit;
+  color: white;
+  :not(:last-of-type) {
+    padding: 0px 15px;
+  }
+  :hover {
+    color: orange;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const OpenMenu = styled(BiMenuAltRight)`
+  display: none;
+  @media screen and (max-width: 768px) {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100;
+    color: white;
+  }
+`;
+
+export const CloseMenu = styled(IoClose)`
+  display: none;
+  @media screen and (max-width: 768px) {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100;
+    color: white;
+  }
+`;
+
+export const SMobileMenu = styled.div`
+  position: fixed;
+  top: ${standardSizing.headerHeight};
+  left: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+
+  width: 100vw;
+  height: calc(100% - ${standardSizing.headerHeight});
+  transition: 0.3s ease left;
+  padding: 0 2rem;
+`;
+
+export const MobileLinks = styled(Link)`
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
   :hover {
     color: orange;
   }

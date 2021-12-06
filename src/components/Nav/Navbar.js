@@ -1,31 +1,63 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import {
-  VscMenuStyled,
-  Nav,
-  NavLink,
-  NavMenu,
-  Logo,
-  SHeaderHeight,
   SHeaderFixed,
   SHeader,
-  SCenter,
   SLeft,
   SRight,
   SLogo,
   SLogoLink,
-  SCTAButton,
-  SMenuToggleButton,
-  SMenuIcon,
-  SCloseIcon,
   SMobileMenu,
+  SNavLink,
+  OpenMenu,
+  CloseMenu,
+  MobileLinks,
 } from "./NavbarElements";
-import { NavLink as Link } from "react-router-dom";
-import MobileNav from "./MobileNav";
-import { VscMenu, VscClose } from "react-icons/vsc";
 import { Library } from "../Library/Library";
 
-import "./Navbar.css";
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  window.addEventListener("resize", () => {
+    if (document.body.clientWidth > 768) {
+      setOpen(false);
+    }
+  });
+
+  return (
+    <>
+      <SHeaderFixed>
+        <SHeader>
+          <SLeft>
+            <SLogoLink to="/">
+              <SLogo>CGTV</SLogo>
+            </SLogoLink>
+          </SLeft>
+          <SRight>
+            <div onClick={() => setOpen(!open)}>
+              {!open ? <OpenMenu  size={25} /> : <CloseMenu size={25} />}
+            </div>
+            {Library.routeName.map((route, index) => (
+              <SNavLink key={index} to={route.path}>
+                {route.name}
+              </SNavLink>
+            ))}
+          </SRight>
+        </SHeader>
+      </SHeaderFixed>
+      <SMobileMenu style={open ? { left: 0 } : {}}>
+        {Library.routeName.map((route, index) => (
+          <MobileLinks key={index} to={route.path}>
+            {route.name}
+          </MobileLinks>
+        ))}
+      </SMobileMenu>
+    </>
+  );
+};
+
+export default Navbar;
+
+// import "./Navbar.css";
 // const Nav = styled.nav`
 //   background: #000;
 //   height: 80px;
@@ -169,40 +201,20 @@ import "./Navbar.css";
 
 // `;
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const openMenu = () => {
-    setOpen(!open);
-  };
-  const closeMobileMenu = () => {
-    setOpen(false);
-  };
-  const menuIcon = open ? (
-    <VscClose className="fas fa-times" />
-  ) : (
-    <VscMenu className="fas fa-bars" />
-  );
+// <NavBar>
+// <Nav>
+//   <NavLink to="/">
+//     <Logo>CGTV</Logo>
+//   </NavLink>
+//   <MobileNav />
+//   <NavMenu>
+//     <NavLink to="/about">About</NavLink>
+//     <NavLink to="/contact">Contact</NavLink>
+//     <NavLink to="/services">Services</NavLink>
+//   </NavMenu>
+// </Nav>
 
-  window.addEventListener("resize", () => {
-    if (document.body.clientWidth > 768) {
-      setOpen(false);
-    }
-  });
-  return (
-    // <NavBar>
-    // <Nav>
-    //   <NavLink to="/">
-    //     <Logo>CGTV</Logo>
-    //   </NavLink>
-    //   <MobileNav />
-    //   <NavMenu>
-    //     <NavLink to="/about">About</NavLink>
-    //     <NavLink to="/contact">Contact</NavLink>
-    //     <NavLink to="/services">Services</NavLink>
-    //   </NavMenu>
-    // </Nav>
-
-    /* <Nav>
+/* <Nav>
         <div className="logo">
           CGTV
         </div>
@@ -215,76 +227,49 @@ const Navbar = () => {
           <li>Services</li>
         </ul>
       </Nav> */
-    //   <NavContainer>
-    //     <NavLink to="/">
-    //       <NavLogo>CGTV</NavLogo>
-    //     </NavLink>
+//   <NavContainer>
+//     <NavLink to="/">
+//       <NavLogo>CGTV</NavLogo>
+//     </NavLink>
 
-    //     <Nav>
-    //       <UL>
-    //         <LI>
-    //           <NavLink to="/about">About</NavLink>
-    //         </LI>
-    //         <LI>
-    //           <NavLink to="/contact">Contact</NavLink>
-    //         </LI>
-    //         <LI>
-    //           <NavLink to="/services">Services</NavLink>
-    //         </LI>
-    //       </UL>
-    //     </Nav>
+//     <Nav>
+//       <UL>
+//         <LI>
+//           <NavLink to="/about">About</NavLink>
+//         </LI>
+//         <LI>
+//           <NavLink to="/contact">Contact</NavLink>
+//         </LI>
+//         <LI>
+//           <NavLink to="/services">Services</NavLink>
+//         </LI>
+//       </UL>
+//     </Nav>
 
-    //     <MenuToggle>
-    //       <VscMenu />
-    //     </MenuToggle>
-    //   </NavContainer>
-    // </NavBar>
+//     <MenuToggle>
+//       <VscMenu />
+//     </MenuToggle>
+//   </NavContainer>
+// </NavBar>
 
-    // <div className="nav-container">
-    //   {/* Logo */}
-    //   <nav className="navbar">
+// <div className="nav-container">
+//   {/* Logo */}
+//   <nav className="navbar">
 
-    //     <Link to="/" className='navbar-logo'>CGTV</Link>
+//     <Link to="/" className='navbar-logo'>CGTV</Link>
 
-    // {/* Mobile Nav Icon */}
-    //   <div className="menu-icon" onClick={openMenu}>
-    //     <i>{menuIcon}</i>
-    //   </div>
+// {/* Mobile Nav Icon */}
+//   <div className="menu-icon" onClick={openMenu}>
+//     <i>{menuIcon}</i>
+//   </div>
 
-    // {/* Links */}
-    //   <ul className={open ? 'nav-menu active' : 'nav-menu'}>
-    //     {Library.routeName.map((route, index) => (
-    //       <li className='nav-item' key={index}>
-    //       <Link to={route.path} className='nav-links' onClick={closeMobileMenu}>{route.name}</Link>
-    //     </li>
-    //     ))}
-    //   </ul>
-    //   </nav>
-    // </div>
-    <>
-      <SHeaderHeight />
-      <SHeaderFixed>
-        <SHeader>
-          <SLeft>
-            <SLogoLink to="/">
-              <SLogo>CGTV</SLogo>
-            </SLogoLink>
-          </SLeft>
-          <SCenter>
-            <MobileNav />
-          </SCenter>
-          <SRight>
-            <div onClick={() => setOpen(!open)}>
-              {!open ? <SMenuIcon size={20} /> : <SCloseIcon size={25} />}
-            </div>
-          </SRight>
-        </SHeader>
-      </SHeaderFixed>
-      <SMobileMenu style={open ? { left: 0 } : {}}>
-        <MobileNav />
-      </SMobileMenu>
-    </>
-  );
-};
-
-export default Navbar;
+// {/* Links */}
+//   <ul className={open ? 'nav-menu active' : 'nav-menu'}>
+//     {Library.routeName.map((route, index) => (
+//       <li className='nav-item' key={index}>
+//       <Link to={route.path} className='nav-links' onClick={closeMobileMenu}>{route.name}</Link>
+//     </li>
+//     ))}
+//   </ul>
+//   </nav>
+// </div>
