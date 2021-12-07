@@ -8,6 +8,9 @@ export const HomeScreen = () => {
 
   return (
     <div className="container">
+      <video muted autoPlay>
+          <source src={homeVideo} type="video/mp4"></source>
+        </video>
         {/* <video muted autoPlay>
           <source src={homeVideo} type="video/mp4"></source>
         </video>

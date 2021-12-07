@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { VscMenu, VscClose } from "react-icons/vsc";
-import { IoClose, IoMenu } from "react-icons/io5"
-import { BiMenuAltRight } from "react-icons/bi"
+import { IoClose, IoMenu } from "react-icons/io5";
+import { BiMenuAltRight } from "react-icons/bi";
 import { GiFilmStrip } from "react-icons/gi";
 import { standardSizing, breakPoint } from "../styles/variables";
 
@@ -103,7 +103,10 @@ export const SHeaderFixed = styled.div`
   right: 0;
   top: 0;
   height: ${standardSizing.headerHeight};
-  background-color: black;
+  /* background: linear-gradient(
+    to bottom,
+    #000000,
+    color(#000000 alpha(20%))); */
   z-index: 10;
 `;
 
@@ -251,6 +254,7 @@ export const SNavLinkContainer = styled.div`
 export const SNavLink = styled(Link)`
   text-decoration: none;
   color: white;
+  font-weight: bold;
   :not(:last-of-type) {
     padding: 0px 15px;
   }
@@ -276,31 +280,16 @@ export const OpenMenu = styled(BiMenuAltRight)`
 `;
 
 export const CloseMenu = styled(IoClose)`
-  display: none;
-  @media screen and (max-width: 768px) {
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 100;
-    color: white;
-  }
+  cursor: pointer;
+  color: white;
 `;
 
 export const SMobileMenu = styled.div`
-  position: fixed;
-  top: ${standardSizing.headerHeight};
-  left: 100%;
-  background: black;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: column;
-
-  width: 100vw;
-  height: calc(100% - ${standardSizing.headerHeight});
-  transition: 0.3s ease left;
-  padding: 0 2rem;
+  height: calc(100% - 65px);
 `;
 
 export const MobileLinks = styled(Link)`
@@ -311,4 +300,45 @@ export const MobileLinks = styled(Link)`
   :hover {
     color: orange;
   }
+`;
+
+export const MobileContainer = styled.div`
+  position: fixed;
+  left: 100%;
+  background: black;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease left;
+`;
+
+// export const MobileHeader = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// `;
+
+export const MobileHeader = styled.header`
+  margin: 0 .75rem;
+  max-width: 1920px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.25rem 1.25rem;
+`;
+
+export const MobileLeft = styled.div``;
+
+export const MobileRight = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const MobileLogo = styled.div`
+  display: flex;
+  width: 40px;
+  cursor: pointer;
+  color: white;
 `;

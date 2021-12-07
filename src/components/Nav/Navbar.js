@@ -11,6 +11,11 @@ import {
   OpenMenu,
   CloseMenu,
   MobileLinks,
+  MobileContainer,
+  MobileHeader,
+  MobileLeft,
+  MobileRight,
+  MobileLogo,
 } from "./NavbarElements";
 import { Library } from "../Library/Library";
 
@@ -33,9 +38,7 @@ const Navbar = () => {
             </SLogoLink>
           </SLeft>
           <SRight>
-            <div onClick={() => setOpen(!open)}>
-              {!open ? <OpenMenu  size={25} /> : <CloseMenu size={25} />}
-            </div>
+            <OpenMenu onClick={() => setOpen(true)} size={25} />
             {Library.routeName.map((route, index) => (
               <SNavLink key={index} to={route.path}>
                 {route.name}
@@ -44,13 +47,70 @@ const Navbar = () => {
           </SRight>
         </SHeader>
       </SHeaderFixed>
-      <SMobileMenu style={open ? { left: 0 } : {}}>
+      <MobileContainer style={open ? { left: 0 } : {}}>
+        <MobileHeader>
+          <MobileLeft>
+            <MobileLogo onClick={() => setOpen(false)}>
+              <SLogo>CGTV</SLogo>
+            </MobileLogo>
+          </MobileLeft>
+          <MobileRight>
+            <CloseMenu onClick={() => setOpen(false)} size={25} />
+          </MobileRight>
+        </MobileHeader>
+        <SMobileMenu>
+          {Library.routeName.map((route, index) => (
+            <MobileLinks
+              key={index}
+              to={route.path}
+              onClick={() => setOpen(false)}
+            >
+              {route.name}
+            </MobileLinks>
+          ))}
+        </SMobileMenu>
+      </MobileContainer>
+
+      {/* <MobileContainer style={open ? { left: 0 } : {}}> */}
+      {/* <MobileHeader>
+          <MobileLinks to="/">CGTV</MobileLinks>
+          <CloseMenu onClick={() => setOpen(false)} size={30} />
+        </MobileHeader> */}
+      {/* <SHeader>
+          <SLeft>
+            <SLogoLink to="/">
+              <SLogo>CGTV</SLogo>
+            </SLogoLink>
+          </SLeft>
+          <SRight>
+          <CloseMenu onClick={() => setOpen(false)} size={30} />
+          </SRight>
+        </SHeader>
+      </MobileContainer> */}
+      {/* <SMobileMenu style={open ? { left: 0 } : {}}>
         {Library.routeName.map((route, index) => (
           <MobileLinks key={index} to={route.path}>
             {route.name}
           </MobileLinks>
         ))}
-      </SMobileMenu>
+      </SMobileMenu> */}
+      {/* <SHeaderFixed style={open ? { left: 0 } : {}}>
+        <SHeader>
+          <SLeft>
+            <SLogoLink to="/">
+              <SLogo>CGTV</SLogo>
+            </SLogoLink>
+          </SLeft>
+          <SRight>
+            <OpenMenu onClick={() => setOpen(true)} size={25} />
+            {Library.routeName.map((route, index) => (
+              <SNavLink key={index} to={route.path}>
+                {route.name}
+              </SNavLink>
+            ))}
+          </SRight>
+        </SHeader>
+      </SHeaderFixed> */}
     </>
   );
 };
