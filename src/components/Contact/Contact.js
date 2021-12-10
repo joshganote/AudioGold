@@ -5,7 +5,7 @@ import './Contact.css';
 export const Contact = () => {
   return (
     <>
-    {/* <h1 className="backgroundImg contact-title">Contact</h1> */}
+    <h1 className="backgroundImg contact-title">Contact</h1>
     </>
   );
 }

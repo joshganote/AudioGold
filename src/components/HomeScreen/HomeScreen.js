@@ -1,25 +1,52 @@
 import React from "react";
 import { Grid, Box } from "@mui/material";
+import { ContentContainer } from "../styles/globalStlyes";
+import MartinLogan from "../../assets/martingLogan.png"
+
 import homeVideo from "../../assets/AGBackground.mp4";
 
 import "./HomeScreen.css";
 
 export const HomeScreen = () => {
-
   return (
-    <div className="container">
-      <video muted autoPlay>
-          <source src={homeVideo} type="video/mp4"></source>
-        </video>
-        {/* <video muted autoPlay>
-          <source src={homeVideo} type="video/mp4"></source>
-        </video>
-      <div>
-        <h1>Hey</h1> */}
-        {/* <Box sx={{ width: "100%" }}>
-          <Grid container className="home-grid" spacing={2} columns={{ xs: 6 }}>
-            <Grid item xs={6}>
-              <p style={{  color: "white" }}>
+    <div className="background">
+      {/* <video muted autoPlay>
+        <source src={homeVideo} type="video/mp4"></source>
+      </video>
+      <ContentContainer>
+        <Box>
+          <Grid container>
+            <Grid item sm={12}>
+              <p style={{ fontWeight: "bold", fontSize: "32px" }}>Making you</p>
+            </Grid>
+            <Grid item sm={12}>
+              <p
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "32px",
+                  paddingLeft: "2em",
+                }}
+              >
+                the center
+              </p>
+            </Grid>
+            <Grid item sm={12}>
+              <p
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "32px",
+                  paddingLeft: "4em",
+                }}
+              >
+                of attention
+              </p>
+            </Grid>
+          </Grid>
+        </Box>
+        <Box mt={5}>
+          <Grid container spacing={2}>
+            <Grid item sm={12} md={6}>
+              <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 tristique libero sem, eget vehicula quam feugiat facilisis.
                 Proin consequat nunc aliquam nunc vehicula, ultrices tincidunt
@@ -63,8 +90,8 @@ export const HomeScreen = () => {
                 finibus ex laoreet, iaculis tortor.
               </p>
             </Grid>
-            <Grid item xs={6}>
-              <p style={{ color: "white" }}>
+            <Grid item sm={12} md={6}>
+              <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 tristique libero sem, eget vehicula quam feugiat facilisis.
                 Proin consequat nunc aliquam nunc vehicula, ultrices tincidunt
@@ -109,8 +136,11 @@ export const HomeScreen = () => {
               </p>
             </Grid>
           </Grid>
-        </Box> */}
-      {/* </div> */}
+        </Box>
+        <Box>
+          <img src={MartinLogan} alt="Martin Logan Logo"/>
+        </Box>
+      </ContentContainer> */}
     </div>
   );
 };

@@ -1,14 +1,4 @@
-.container {
-  height: 100%;
-}
-
 video {
-  /* object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0; */
-  
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -17,17 +7,25 @@ video {
   left: 0;
 }
 
-h1 {
+.background {
+  background: rgb(1, 175, 255);
+  background: linear-gradient(
+    162deg,
+    rgba(1, 175, 255, 1) 0%,
+    rgba(143, 1, 255, 1) 80%
+  );
+}
+
+p {
   color: white;
 }
 
-/* .home-grid {
-  position: relative;
-  padding: "1em 3em";
+.MuiBox-root {
+  padding: 1em 8em !important;
 }
 
-@media only screen and (max-width: 768px) {
-  .home-grid {
-    background-color: lightblue;
+@media screen and (max-width: 768px) {
+  .MuiBox-root {
+    padding: 1em 6em !important;
   }
-} */
+}

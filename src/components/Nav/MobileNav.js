@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import { SNav, SNavLink, SNavLinkContainer } from "./NavbarElements";
+import { SMobileMenu,
+  CloseMenu,
+  MobileLinks,
+  MobileContainer,
+  MobileHeader,
+  MobileLeft,
+  MobileRight,
+  MobileLogo,
+  SLogo, } from "./NavbarElements";
 import { VscMenu, VscClose } from "react-icons/vsc";
 import { Library } from "../Library/Library";
 
@@ -68,35 +76,29 @@ const MobileNav = () => {
 
   return (
     <>
-      {/* {open ? (
-        <>
-          <Navvv>
-            <Logo>CGTV Test</Logo>
-            <VscCloseStyled open={open} onClick={() => setOpen(!open)} />
-          <MobileMenu>
-            <LI>About</LI>
-            <LI>Contact</LI>
-            <LI>Services</LI>
-          </MobileMenu>
-          </Navvv>
-        </>
-      ) : (
-        <VscMenuStyled open={open} onClick={() => setOpen(!open)} />
-      )} */}
-      {/* <MobileMenu>
-        <i open={open} onClick={() => setOpen(!open)}>
-          {icon}
-        </i>
-      </MobileMenu> */}
-       <SNav>
-         {Library.routeName.map((route, index) => {
-           return <SNavLinkContainer>
-             <SNavLink to={route.path} key={index}>
-               {route.name}
-             </SNavLink>
-           </SNavLinkContainer>
-         })}
-       </SNav>
+      {/* <MobileContainer style={ open ? { left: 0 } : {}}>
+        <MobileHeader>
+          <MobileLeft>
+            <MobileLogo onClick={() => setOpen(false)}>
+              <SLogo>CGTV</SLogo>
+            </MobileLogo>
+          </MobileLeft>
+          <MobileRight>
+            <CloseMenu onClick={() => setOpen(false)} size={25} />
+          </MobileRight>
+        </MobileHeader>
+        <SMobileMenu>
+          {Library.routeName.map((route, index) => (
+            <MobileLinks
+              key={index}
+              to={route.path}
+              onClick={() => setOpen(false)}
+            >
+              {route.name}
+            </MobileLinks>
+          ))}
+        </SMobileMenu>
+      </MobileContainer> */}
     </>
   );
 };
