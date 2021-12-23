@@ -13,7 +13,6 @@ import {
 
 const Footer = () => {
   return (
-    <>
       <FooterContainer>
         <LogoFooter>
           <Logo>Complete Geek TV Productions</Logo>
@@ -34,7 +33,6 @@ const Footer = () => {
           </a>
         </SocialContainer>
       </FooterContainer>
-    </>
   );
 };
 

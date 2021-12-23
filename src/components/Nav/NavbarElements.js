@@ -3,7 +3,6 @@ import { NavLink as Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { BiMenuAltRight } from "react-icons/bi";
 
-
 export const DesktopContainer = styled.div`
   position: absolute;
   left: 0;
@@ -32,7 +31,20 @@ export const NavHeader = styled.header`
   }
 `;
 
-export const LeftContainer = styled.div``;
+export const LeftContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const CenterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    display: contents;
+  }
+`;
 
 export const RightContainer = styled.div`
   display: flex;
@@ -43,18 +55,26 @@ export const RightContainer = styled.div`
 // Left Nav
 export const LogoLink = styled(Link)`
   display: flex;
-  width: 40px;
-  color: inherit;
   text-decoration: none;
   color: white;
 `;
 
 export const Logo = styled.h1`
-  color: black;
-  display: block;
   width: 100%;
   height: 100%;
+  font-size: 24px;
   color: white;
+  @media screen and (max-width: 920px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 788px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 468px) {
+    font-size: 14px;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -63,7 +83,14 @@ export const NavLink = styled(Link)`
   font-weight: bold;
   padding: 0px 15px;
   :hover {
-    color: orange;
+    color: rgba(243, 144, 79);
+  }
+  @media screen and (max-width: 920px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 788px) {
+    font-size: 12px;
   }
 
   @media screen and (max-width: 768px) {
@@ -102,7 +129,7 @@ export const MobileLinks = styled(Link)`
   font-weight: bold;
   font-size: 24px;
   :hover {
-    color: orange;
+    color: rgba(243, 144, 79);
   }
 `;
 
@@ -112,12 +139,14 @@ export const MobileContainer = styled.div`
   background: black;
   z-index: 1000;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transition: 0.3s ease left;
+  overflow-y: hidden;
+  overflow-x: hidden;
 `;
 
 export const MobileHeader = styled.header`
-  margin: 0 .75rem;
+  margin: 0 0.75rem;
   max-width: 1920px;
   display: flex;
   align-items: center;
@@ -140,4 +169,20 @@ export const MobileLogo = styled.div`
   width: 40px;
   cursor: pointer;
   color: white;
+`;
+
+export const ContactBorder = styled.div`
+  padding: 5px;
+  border-radius: 16px;
+  background: rgba(243, 144, 79, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 920px) {
+    padding: 3px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;

@@ -17,5 +17,11 @@ import styled from "styled-components";
 // `;
 
 export const ContentContainer = styled.div`
-  padding-top: 8em;
+  padding-top: 3em;
+`;
+
+export const DefaultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;

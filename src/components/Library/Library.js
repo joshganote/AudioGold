@@ -1,7 +1,11 @@
 export const Library = {
   routeName: [
-    {name: 'CONTACT', path: '/contact'},
-    {name: 'SERVICES', path: '/services'},
-    {name: 'ABOUT', path: '/about'},
-  ]
+    {name: 'Portfolio', path: '/portfolio'},
+    {name: 'Services', path: '/services'},
+    {name: 'About', path: '/about'},
+  ],
+  contact: {
+    name: 'Contact Us', 
+    path: '/contact',
+  }
 }

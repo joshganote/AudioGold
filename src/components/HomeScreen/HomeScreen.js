@@ -1,52 +1,73 @@
 import React from "react";
 import { Grid, Box } from "@mui/material";
-import { ContentContainer } from "../styles/globalStlyes";
-import MartinLogan from "../../assets/martingLogan.png"
-
+import { ContentContainer, DefaultContainer } from "../styles/globalStlyes";
+import MartinLogan from "../../assets/martingLogan.png";
+import sampleImg from "../../assets/conor.png";
 import homeVideo from "../../assets/AGBackground.mp4";
 
 import "./HomeScreen.css";
+import Footer from "../Footer/Footer";
 
 export const HomeScreen = () => {
   return (
-    <div className="background">
-      {/* <video muted autoPlay>
+    <DefaultContainer>
+      <video muted autoPlay>
         <source src={homeVideo} type="video/mp4"></source>
       </video>
       <ContentContainer>
-        <Box>
-          <Grid container>
+        {/* <div style={{ display: "flex" }}>
+          <div className="container1">
+            <div className="container2">
+              <div className="content">
+                <h1 className="content-text more-padding">
+                  Putting all the focus on you
+                </h1>
+                <h2 className="content-text2 more-padding">
+                  A production team working to capture all the moments that make
+                  your products come to life
+                </h2>
+              </div>
+            </div>
+          </div> */}
+        {/* <img src={sampleImg}/> */}
+        {/* </div> */}
+        {/* <Box style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <Grid container spacing={2}>
             <Grid item sm={12}>
-              <p style={{ fontWeight: "bold", fontSize: "32px" }}>Making you</p>
-            </Grid>
-            <Grid item sm={12}>
-              <p
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "32px",
-                  paddingLeft: "2em",
-                }}
-              >
-                the center
-              </p>
-            </Grid>
-            <Grid item sm={12}>
-              <p
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "32px",
-                  paddingLeft: "4em",
-                }}
-              >
-                of attention
+              <p style={{textAlign: 'center', fontWeight: "bold", fontSize: "64px", height: '425px', display: 'block',
+  marginBottom: '16px',
+  lineHeight: '1.2em' }}>
+                Capturing the all the moments that make you and your products come to life
               </p>
             </Grid>
           </Grid>
+        </Box> */}
+        {/* <div className="container1">
+          <div className="container2">
+            <div className="content">
+              <h1 className="content-text">Capturing the all the moments that make you and your products come to life</h1>
+            </div>
+          </div>
+        </div> */}
+        <Box mt={8}>
+          <div className="topSection-container">
+            <h1 className="line-1 padding-top">Putting all the focus on <span className="focus">you</span></h1>
+            {/* <h1 className="line-1 padding-middle">the focus</h1>
+            <div className="test">
+              <h1 className="line-1 padding-bottom">
+                on <span className="focus">you</span>
+              </h1>
+            </div> */}
+            <h2 className="line-2">
+              A production team working to capture all the moments that make
+              your products come to life
+            </h2>
+          </div>
         </Box>
         <Box mt={5}>
           <Grid container spacing={2}>
             <Grid item sm={12} md={6}>
-              <p>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 tristique libero sem, eget vehicula quam feugiat facilisis.
                 Proin consequat nunc aliquam nunc vehicula, ultrices tincidunt
@@ -88,10 +109,10 @@ export const HomeScreen = () => {
                 in. Praesent quis interdum nisl, ac accumsan augue. Curabitur
                 cursus felis ut vestibulum maximus. Integer vel odio rutrum,
                 finibus ex laoreet, iaculis tortor.
-              </p>
+              </p> */}
             </Grid>
             <Grid item sm={12} md={6}>
-              <p>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 tristique libero sem, eget vehicula quam feugiat facilisis.
                 Proin consequat nunc aliquam nunc vehicula, ultrices tincidunt
@@ -133,14 +154,13 @@ export const HomeScreen = () => {
                 in. Praesent quis interdum nisl, ac accumsan augue. Curabitur
                 cursus felis ut vestibulum maximus. Integer vel odio rutrum,
                 finibus ex laoreet, iaculis tortor.
-              </p>
+              </p> */}
             </Grid>
+            <Grid item sm={12} md={6}></Grid>
           </Grid>
         </Box>
-        <Box>
-          <img src={MartinLogan} alt="Martin Logan Logo"/>
-        </Box>
-      </ContentContainer> */}
-    </div>
+      </ContentContainer>
+      <Footer />
+    </DefaultContainer>
   );
 };

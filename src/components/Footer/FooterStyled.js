@@ -12,9 +12,7 @@ export const FooterContainer = styled.footer`
   align-items: center;
   z-index: 1;
 
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  margin-top: auto;
 
   @media screen and (max-width: 768px) {
     padding: 0 2rem;
@@ -29,7 +27,7 @@ export const LogoFooter = styled.div`
 `;
 
 export const Logo = styled.p`
-  color: black;
+  color: white;
 
   @media screen and (max-width: 768px) {
     font-size: 0.75em;
@@ -37,7 +35,7 @@ export const Logo = styled.p`
 `;
 
 export const CopyrightIcon = styled(MdOutlineCopyright)`
-  color: black;
+  color: white;
   font-size: 1em;
   margin-left: 2px;
 
@@ -58,7 +56,7 @@ export const SocialContainer = styled.div`
 `;
 
 export const InstagramIcon = styled(BsInstagram)`
-  color: black;
+  color: white;
   font-size: 1.5em;
   margin-right: 1em;
 
@@ -68,7 +66,7 @@ export const InstagramIcon = styled(BsInstagram)`
 `;
 
 export const YouTubeIcon = styled(BsYoutube)`
-  color: black;
+  color: white;
   font-size: 1.5em;
   margin-right: 1em;
 
@@ -78,7 +76,7 @@ export const YouTubeIcon = styled(BsYoutube)`
 `;
 
 export const TwitterIcon = styled(BsTwitter)`
-  color: black;
+  color: white;
   font-size: 1.5em;
   margin-right: 1em;
 
@@ -88,7 +86,7 @@ export const TwitterIcon = styled(BsTwitter)`
 `;
 
 export const TwitchIcon = styled(BsTwitch)`
-  color: black;
+  color: white;
   font-size: 1.5em;
   margin-right: 1em;
 

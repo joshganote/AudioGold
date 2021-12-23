@@ -1,15 +1,14 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
+import { DefaultContainer } from '../styles/globalStlyes';
 
 import './About.css';
 
 export const About = () => {
 
   return (
-    <>
-    {/* <div className="aboutImg"/>
-    <div>
-      <h1>About</h1>
-    </div> */}
-    </>
+    <DefaultContainer>
+      <Footer />
+    </DefaultContainer>
   );
 }
