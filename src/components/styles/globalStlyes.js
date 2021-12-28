@@ -17,7 +17,8 @@ import styled from "styled-components";
 // `;
 
 export const ContentContainer = styled.div`
-  padding-top: 3em;
+  /* padding: 6em 4em 0em 4em; */
+
 `;
 
 export const DefaultContainer = styled.div`

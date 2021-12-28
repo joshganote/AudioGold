@@ -10,8 +10,8 @@ export const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
-
+  z-index: 100;
+  position: relative;
   margin-top: auto;
 
   @media screen and (max-width: 768px) {

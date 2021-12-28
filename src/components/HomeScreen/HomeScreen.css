@@ -1,10 +1,10 @@
 video {
-  position: absolute;
   object-fit: cover;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
+  position: absolute;
 }
 
 .line-1 {
@@ -15,6 +15,8 @@ video {
   text-shadow: 0 0 3px rgba(243, 144, 79);
   filter: drop-shadow(6px 5px 6px #4444dd);
   text-align: center;
+  position: relative;
+  z-index: 100;
 }
 
 @media screen and (max-width: 768px) {
@@ -35,6 +37,7 @@ video {
   width: 450px;
   margin-top: 0.5em;
   text-align: center;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {
@@ -53,7 +56,7 @@ video {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 30em;
+  height: 100vh;
 }
 
 img {
@@ -114,11 +117,16 @@ p {
 }
 
 .MuiBox-root {
-  padding: 1em 8em !important;
+  /* padding: 1em 8em !important; */
 }
 
 @media screen and (max-width: 768px) {
   .MuiBox-root {
     padding: 1em 6em !important;
   }
+}
+
+
+.test3 {
+  position: relative;
 }

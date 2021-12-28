@@ -18,7 +18,7 @@ code {
   height: 100%;
 } */
 body {
-  background-color: black;
+  /* background-color: black; */
   /* background-color: #222222; */
   /* background: linear-gradient(
       20deg,
@@ -34,4 +34,12 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; */
+    background: linear-gradient(
+      20deg,
+      rgba(243, 144, 79, 1) 0%,
+      rgba(188, 121, 89, 1) 30%,
+      rgba(128, 96, 100, 1) 50%,
+      rgba(80, 76, 109, 1) 80%,
+      rgba(59, 67, 113, 1) 100%
+    )
 }

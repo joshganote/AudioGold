@@ -6,3 +6,37 @@
     width: 100vw;
     height: 100vh;
   }
+
+.about-video {
+  position: relative;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.img-container {
+}
+
+.about-img {
+  width: 250px;
+  height: 300px;
+}
+
+.img-content {
+  padding-top: 15px;
+}
+
+.header {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+/* .MuiBox-root {
+  padding: 0 !important;
+} */
