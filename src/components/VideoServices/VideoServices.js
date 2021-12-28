@@ -1,12 +1,13 @@
 import React from "react";
+import Footer from '../Footer/Footer';
+import { DefaultContainer } from '../styles/globalStlyes';
 
 import "./VideoServices.css";
 
 export const VideoServices = () => {
   return (
-    <>
-    {/* <div className="productionImg"></div>
-    <h1 className="services-title">Services</h1> */}
-    </>
+    <DefaultContainer>
+      <Footer />
+    </DefaultContainer>
   );
 };
