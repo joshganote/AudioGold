@@ -25,7 +25,7 @@ export const HomeScreen = () => {
           </h2>
         </div>
         <section className="test3">
-          <Box mt={5}>
+          <Box>
             <Grid container spacing={2}>
               <Grid item sm={12} md={6}>
                 <p>
