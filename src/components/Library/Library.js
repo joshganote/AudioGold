@@ -1,10 +1,4 @@
 import photo from "../../assets/portrait4.png";
-import portfolio from "../../assets/Arcade.jpg";
-import artIo from "../../assets/AGBackground.mp4"
-const cgtv1 = `https://www.youtube.com/embed/v9dIysPyKPw`;
-const cgtv2 = `https://www.youtube.com/embed/elDxznCvpdY`;
-const cgtv3 = `https://www.youtube.com/embed/tB7sPm8T3_s`;
-const cgtv4 = `https://www.youtube.com/embed/hOh5uqmo_7U`;
 export const Library = {
   routeName: [
     { name: "Portfolio", path: "/portfolio" },
@@ -15,12 +9,6 @@ export const Library = {
     name: "Contact Us",
     path: "/contact",
   },
-  videos: [
-    {id: 0, portPic: portfolio, portVideo: cgtv1},
-    {id: 1, portPic: portfolio, portVideo: cgtv2},
-    {id: 2, portPic: portfolio, portVideo: cgtv3},
-    {id: 3, portPic: portfolio, portVideo: cgtv4}
-  ],
   photo: [
     { 
       imageSrc: photo,
